@@ -3,11 +3,12 @@ using Starcounter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Concepts.Ring1;
 
 namespace Colab.HelloContext
 {
     [NoHelloContextPage_json]
-    partial class NoHelloContextPage : Page, IBound<Entity>, IContextApp
+    partial class NoHelloContextPage : Page, IBound<Something>, IContextApp
     {
         /// <summary>
         /// This is the secret about a context app,

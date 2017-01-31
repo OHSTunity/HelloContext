@@ -2,10 +2,8 @@
   "Tap$":  0,
 
   "Priority": false,
-  "$Priority": { "bind": "PriorityCB" },
   "Icon": " icomoon icomoon-stack",
   "HexColor": "",
   "Label": "",
-  "$Label": { "bind": "LabelCB" },
   "AppName": "colab_hellocontext"
 }

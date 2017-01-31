@@ -1,6 +1,7 @@
 ﻿using System;
 using Starcounter;
 using Colab.Public;
+using Concepts.Ring1;
 
 namespace Colab.HelloContext {
     /// <summary>
@@ -17,7 +18,7 @@ namespace Colab.HelloContext {
         /// </summary>
         public static void Register()
         {
-            ContextHandler.OnContextMenuRequested((Entity context) =>
+            ContextHandler.OnContextMenuRequested((Something context) =>
             {
                 var menu = new Menu();
                 if (true) //&& TODO: Here is good to check access rights
@@ -32,7 +33,7 @@ namespace Colab.HelloContext {
 
 
             //Gets called if a new context is selected but ONLY if this app is the current app
-            ContextHandler.OnContextSelected((Entity context) =>
+            ContextHandler.OnContextSelected((Something context) =>
             {
                 if (context != null)
                 {

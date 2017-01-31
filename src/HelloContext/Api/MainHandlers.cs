@@ -1,7 +1,6 @@
 ﻿using System;
 using Starcounter;
-using Simplified.Ring1;
-using Simplified.Ring2;
+using Concepts.Ring1;
 using Colab.Public;
 
 namespace Colab.HelloContext {
@@ -14,13 +13,13 @@ namespace Colab.HelloContext {
         public static void Register() {
 
             //Should not be called directly
-            Handle.GET("/hellocontext/master", () =>
+            Handle.GET("/colab_hellocontext/master", () =>
             {
                 return Master.Current;
             });
 
             //A non context based page
-            Handle.GET("/hellocontext", (Request req) => 
+            Handle.GET("/colab_hellocontext", (Request req) => 
             {
                 //Master m = (Master)Self.GET(String.Format("/hellocontext/master"));
                 //Use above if no login check is needed, 
@@ -30,13 +29,13 @@ namespace Colab.HelloContext {
                 });
             });
 
-            Handle.GET("/hellocontext/context/{?}", (Request req, string id) =>
+            Handle.GET("/colab_hellocontext/context/{?}", (Request req, string id) =>
             {
                 return ColabX.BuildOn(req, "/colab_hellocontext/master", (Master master) =>
                 { 
                     //Login check is done above, you still might need to check if user
                     //is allowed to access the given context
-                    var context = ContextHandler.GetContext(id);
+                    var context = ContextHandler.GetContext<Something>(id);
                     if (context != null)
                     {
                         var hello = HelloContextData.For(context);

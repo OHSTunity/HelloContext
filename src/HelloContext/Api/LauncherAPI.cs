@@ -1,7 +1,5 @@
 ﻿using System;
 using Starcounter;
-using Simplified.Ring1;
-using Simplified.Ring2;
 using Colab.Public;
 
 namespace Colab.HelloContext {

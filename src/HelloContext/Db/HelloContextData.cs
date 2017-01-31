@@ -11,6 +11,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Starcounter;
+using Concepts.Ring1;
 
 namespace Colab.HelloContext
 {
@@ -18,13 +19,13 @@ namespace Colab.HelloContext
     /// 
     /// </summary>
     [Database]
-    public class HelloContextData: Entity
+    public class HelloContextData: Something
     {
         public HelloContextData()
         {
         }
 
-        public static HelloContextData For(Entity context)
+        public static HelloContextData For(Something context)
         {
             return Db.SQL<HelloContextData>("SELECT a FROM Colab.HelloContextData.MyHelloContext a WHERE a.Context=?", context).First;
         }
@@ -32,12 +33,10 @@ namespace Colab.HelloContext
         /// <summary>
         /// Context  
         /// </summary>
-        public Entity Context;
+        public Something Context;
 
 
-        ///More data
-        public new String Name { get; set; }
-        public String Description { get; set; }
+        //More data here
         
     }
 }
