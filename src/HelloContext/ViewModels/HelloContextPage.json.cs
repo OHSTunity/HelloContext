@@ -7,7 +7,7 @@ using System.Linq;
 namespace Colab.HelloContext
 {
     [HelloContextPage_json]
-    partial class HelloContextPage : Page, IBound<Entity>, IContextApp
+    partial class HelloContextPage : Page, IBound<HelloContextData>, IContextApp
     {
         /// <summary>
         /// This is the secret about a context app,
@@ -17,8 +17,14 @@ namespace Colab.HelloContext
         {
             get
             {
-                return DbHelper.GetObjectID(Data);
+                return DbHelper.GetObjectID(Data?.Context);
             }
         }
+
+        public String OrganizerContextId => ContextId;
+
+        public String HelloContextDataId => DbHelper.GetObjectID(Data);
+
+
     }
 }

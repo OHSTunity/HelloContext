@@ -78,6 +78,9 @@
     <Compile Include="ViewModels\HelloContextMainPage.json.cs">
       <DependentUpon>HelloContextMainPage.json</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\NoHelloContextPage.json.cs">
+      <DependentUpon>NoHelloContextPage.json</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\HelloContextPage.json.cs">
       <DependentUpon>HelloContextPage.json</DependentUpon>
     </Compile>
@@ -106,25 +109,22 @@
     </TypedJSON>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="wwwroot\co-hellocontext\css\barcodes.css" />
-    <Content Include="wwwroot\co-hellocontext\css\standalone.css" />
-    <Content Include="wwwroot\co-hellocontext\images\barcode.png" />
-    <Content Include="wwwroot\co-hellocontext\viewmodels\AppIconPage.html" />
-    <Content Include="wwwroot\co-hellocontext\viewmodels\BarcodePage.html" />
-    <Content Include="wwwroot\co-hellocontext\viewmodels\BarcodesPage.html" />
-    <Content Include="wwwroot\co-hellocontext\viewmodels\DashboardPage.html" />
-    <Content Include="wwwroot\co-hellocontext\viewmodels\LauncherWrapperPage.html" />
-    <Content Include="wwwroot\co-hellocontext\viewmodels\MenuPage.html" />
-    <Content Include="wwwroot\co-hellocontext\viewmodels\SomethingPage.html" />
-    <Content Include="wwwroot\co-hellocontext\viewmodels\StandalonePage.html" />
-  </ItemGroup>
-  <ItemGroup>
     <TypedJSON Include="ViewModels\HelloContextMainPage.json">
       <Generator>MsBuild:Compile</Generator>
     </TypedJSON>
   </ItemGroup>
   <ItemGroup>
     <TypedJSON Include="ViewModels\HelloContextPage.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\co-hellocontext\hellocontext_mainpage.html" />
+    <Content Include="wwwroot\co-hellocontext\contextpage.html" />
+    <Content Include="wwwroot\co-hellocontext\no-hellocontext.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypedJSON Include="ViewModels\NoHelloContextPage.json">
       <Generator>MsBuild:Compile</Generator>
     </TypedJSON>
   </ItemGroup>

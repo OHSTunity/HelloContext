@@ -45,6 +45,10 @@ namespace Colab.HelloContext {
 
                             return Master.SimpleApplication<HelloContextPage>(hello);
                         }
+                        else
+                        {
+                            return Master.SimpleApplication<NoHelloContextPage>(context);
+                        }
                     }
                     return Master.SimpleApplication<NotFound>();
                 });

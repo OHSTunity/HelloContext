@@ -1,0 +1,51 @@
+<template>
+  <style>
+    .hellocontext-fillandcenter {
+      position: relative;
+      flex-direction: column;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+    }
+    .hellocontext-columndummy {
+      border-right: 1px solid rgba(0, 0, 0, .15);
+      border-left: 1px solid rgba(0, 0, 0, .15);
+      border-top: 1px solid rgba(0, 0, 0, .15);
+      border-bottom: 1px solid rgba(0, 0, 0, .15);
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hellocontext-columndummy-header {
+      color: white;
+      text-shadow: 1px 1px 1px black;
+      background-color: #2196F3;
+      padding: 10px;
+    }
+
+    .createbutton {
+      padding: 10px;
+    }
+
+  </style>
+  <template is="dom-bind">
+    <div class="hellocontext-fillandcenter">
+      <div class="hellocontext-columndummy">
+        <div class="hellocontext-columndummy-header">
+          <span>Current activity does not contain an hellocontext data!</span>
+        </div>
+        <template is="dom-if" if="{{model.CanCreate}}">
+          <co-button class="createbutton" success tap="{{model.Create$}}">Create hellocontext</co-button>
+        </template>
+      </div>
+    </div>
+  </template>
+</template>
