@@ -1,0 +1,13 @@
+{
+  "name": "barcodes",
+  "version": "3.0.5",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^2.2.1",
+    "supertest": "^0.15.0"
+  },
+  "scripts": {
+    "test": "mocha"
+   }
+}

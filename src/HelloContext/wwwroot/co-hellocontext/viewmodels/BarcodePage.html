@@ -1,0 +1,41 @@
+﻿<link rel="import" href="/sys/puppet-redirect/puppet-redirect.html" />
+<link rel="import" href="/sys/x-barcode/src/x-barcode.html" />
+
+<template>
+    <template is="dom-bind">
+        <h2 juicy-style="itemName: Header; height: 35px;">Barcode details</h2>
+        <label class="control-label barcodes-box-label" juicy-style="itemName: Identifies label; height: 35px; width: 150px;">Identifies</label>
+        <div class="barcodes-box-control barcodes-autocomplete" juicy-style="itemName: Find identifiers input; height: 35px; heightDynamic: true; width: 1050px; widthFlexible: true;">
+            <input type="text" value="{{model.IdentifiesName$::input}}" class="barcodes-input form-control" on-blur="onNameBlur" />
+            <template is="dom-if" if="{{model.FoundIdentifiers.length}}">
+                <ul class="barcodes-autocomplete__results">
+                    <template is="dom-repeat" items="{{model.FoundIdentifiers}}">
+                        <li class="barcodes-autocomplete__results-item">
+                            <a value="{{item.Choose$::click}}" onmousedown="this.value++" href="javascript:" class="barcodes-autocomplete__results-link">{{item.Name}}</a>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+        <label class="control-label barcodes-box-label" juicy-style="itemName: Code label; height: 35px; width: 150px;">Code</label>
+        <input type="text" value="{{model.Code$::input}}" class="barcodes-form-input barcodes-box-control form-control" juicy-style="itemName: Code input; height: 35px; width: 500px; widthFlexible: true;"/>
+        <x-barcode code="{{model.CheckedCode}}" class="barcodes-form-barcode" juicy-style="itemName: Barcode; width: 500px; height: 80px;"></x-barcode>
+        <button value="{{model.Save$::click}}" type="button" class="btn btn-primary barcodes-form-button" onmousedown="++this.value" juicy-style="itemName: Save; width: 75px; height: 35px;">Save</button>
+        <button value="{{model.Cancel$::click}}" type="button" class="btn btn-default barcodes-form-button" onmousedown="++this.value" juicy-style="itemName: Cancel; width: 75px; height: 35px;">Cancel</button>
+        <link is="puppet-redirect" history url$="{{model.RedirectUrl$}}" />
+    </template>
+    <script class="barcode-script">
+        (function () {
+            //Beloved IE does not support currentScript and _currentScript does not work in scripts distributed by <content>
+            //var script = document._currentScript || document.currentScript;
+            var script = document.querySelector("html /deep/ .barcode-script");
+            var template = script.previousElementSibling;
+
+            template.onNameBlur = function () {
+                setTimeout(function () {
+                    template.set("model.ClearFoundIdentifiers$", template.model.ClearFoundIdentifiers$ / 1 + 1);
+                }, 100);
+            };
+        })();
+    </script>
+</template>

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProductVersion>9.0.20706</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{C86118D7-451E-4933-BFEE-A1EFDB162FD7};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{27CC99A7-B2EF-47FA-AFD5-F3C719893750}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Colab.HelloContext</RootNamespace>
+    <AssemblyName>colab_hellocontext</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <StartWorkingDirectory>$(MSBuildProjectDirectory)</StartWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Simplified.Data.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SocietyObjects.Concepts.Ring1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SocietyObjects.Concepts.Ring2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SocietyObjects.Concepts.Ring3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SocietyObjects.Concepts.Ring4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Starcounter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d2df1e81d0ca3abf">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Starcounter.Internal, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d2df1e81d0ca3abf">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Starcounter.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d2df1e81d0ca3abf">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Starcounter.XSON, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d2df1e81d0ca3abf">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\OrganizerAPI.cs" />
+    <Compile Include="Api\LauncherAPI.cs" />
+    <Compile Include="Api\MainHandlers.cs" />
+    <Compile Include="Api\Mapping.cs" />
+    <Compile Include="Db\HelloContextData.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\HelloContextMainPage.json.cs">
+      <DependentUpon>HelloContextMainPage.json</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\HelloContextPage.json.cs">
+      <DependentUpon>HelloContextPage.json</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\HelloContextMenuItem.json.cs">
+      <DependentUpon>HelloContextMenuItem.json</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Search\SearchProvider.cs" />
+    <Compile Include="ViewModels\Search\HelloContextSearchResult.json.cs">
+      <DependentUpon>HelloContextSearchResult.json</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Colab.Public.Tools\Colab.Public.Tools\Colab.Public.Tools.csproj">
+      <Project>{a7408ac0-e6f5-4151-b3f6-3261af334bb4}</Project>
+      <Name>Colab.Public.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypedJSON Include="ViewModels\Search\HelloContextSearchResult.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
+  </ItemGroup>
+  <ItemGroup>
+    <TypedJSON Include="ViewModels\HelloContextMenuItem.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\co-hellocontext\css\barcodes.css" />
+    <Content Include="wwwroot\co-hellocontext\css\standalone.css" />
+    <Content Include="wwwroot\co-hellocontext\images\barcode.png" />
+    <Content Include="wwwroot\co-hellocontext\viewmodels\AppIconPage.html" />
+    <Content Include="wwwroot\co-hellocontext\viewmodels\BarcodePage.html" />
+    <Content Include="wwwroot\co-hellocontext\viewmodels\BarcodesPage.html" />
+    <Content Include="wwwroot\co-hellocontext\viewmodels\DashboardPage.html" />
+    <Content Include="wwwroot\co-hellocontext\viewmodels\LauncherWrapperPage.html" />
+    <Content Include="wwwroot\co-hellocontext\viewmodels\MenuPage.html" />
+    <Content Include="wwwroot\co-hellocontext\viewmodels\SomethingPage.html" />
+    <Content Include="wwwroot\co-hellocontext\viewmodels\StandalonePage.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypedJSON Include="ViewModels\HelloContextMainPage.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
+  </ItemGroup>
+  <ItemGroup>
+    <TypedJSON Include="ViewModels\HelloContextPage.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(StarcounterBin)\Starcounter.MsBuild.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

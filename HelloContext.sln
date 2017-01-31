@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloContext", "src\HelloContext\HelloContext.csproj", "{27CC99A7-B2EF-47FA-AFD5-F3C719893750}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F5912BE-9293-434C-A13E-DB95A06B911A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		build.bat = build.bat
+		make.bat = make.bat
+		package.bat = package.bat
+		package.json = package.json
+		README.md = README.md
+		Rebracer.xml = Rebracer.xml
+		restart.bat = restart.bat
+		run.bat = run.bat
+		test\test.js = test\test.js
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colab.Public.Tools", "..\Colab.Public.Tools\Colab.Public.Tools\Colab.Public.Tools.csproj", "{A7408AC0-E6F5-4151-B3F6-3261AF334BB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27CC99A7-B2EF-47FA-AFD5-F3C719893750}.Debug|x64.ActiveCfg = Debug|x64
+		{27CC99A7-B2EF-47FA-AFD5-F3C719893750}.Debug|x64.Build.0 = Debug|x64
+		{27CC99A7-B2EF-47FA-AFD5-F3C719893750}.Release|x64.ActiveCfg = Release|x64
+		{27CC99A7-B2EF-47FA-AFD5-F3C719893750}.Release|x64.Build.0 = Release|x64
+		{A7408AC0-E6F5-4151-B3F6-3261AF334BB4}.Debug|x64.ActiveCfg = Debug|x64
+		{A7408AC0-E6F5-4151-B3F6-3261AF334BB4}.Debug|x64.Build.0 = Debug|x64
+		{A7408AC0-E6F5-4151-B3F6-3261AF334BB4}.Release|x64.ActiveCfg = Release|x64
+		{A7408AC0-E6F5-4151-B3F6-3261AF334BB4}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

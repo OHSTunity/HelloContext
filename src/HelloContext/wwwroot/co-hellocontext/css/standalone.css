@@ -1,0 +1,68 @@
+﻿.barcodes-standalone-body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    padding: 0px;
+    margin: 0px;
+}
+
+.barcodes-nav {
+    background-color: #F0F0F0;
+    border-bottom: 1px solid #C0C0C0;
+}
+
+.barcodes-nav__list {
+    display: block;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: auto;
+}
+
+.barcodes-nav__item {
+    float: left;
+}
+
+.barcodes-nav__link {
+    display: block;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #333333;
+}
+
+.barcodes-nav__link:hover {
+    background-color: #333333;
+    color: white;
+}
+
+.barcodes-container {
+    padding: 10px 15px;
+}
+
+
+.barcodes-form-button {
+    float: left;
+    margin-right: 10px;
+}
+
+.barcodes-box-label {
+    float: left;
+    width: 70px;
+}
+
+.barcodes-box-control {
+    margin-left: 80px;
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.barcodes-form-barcode {
+    margin: 25px 0px;
+}
+
+.barcodes-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

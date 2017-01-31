@@ -1,0 +1,34 @@
+{
+  "name": "x-barcode",
+  "description": "Web Component wrapper for UPC-A barcode using Polymer.",
+  "authors": [
+    "Tomomi Imura"
+  ],
+  "license": "MIT",
+  "main": "src/x-barcode.html",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "UPC",
+    "barcode"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#<0.8.0"
+  },
+  "homepage": "https://github.com/girliemac/x-barcode",
+  "_release": "97b7b04a7d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "gh-pages",
+    "commit": "97b7b04a7dfb01db81bb0779233c60ecedb30983"
+  },
+  "_source": "git://github.com/girliemac/x-barcode.git",
+  "_target": "gh-pages",
+  "_originalSource": "x-barcode",
+  "_direct": true
+}
